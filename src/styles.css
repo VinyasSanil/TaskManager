@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~ngx-toastr/toastr.css';
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css');
+
+
+.btn.btn-secondary {
+    background-color: #004976;
+    color:#ffffff;
+}

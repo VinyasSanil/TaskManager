@@ -1,0 +1,42 @@
+<div>
+    <h2 style="margin-top: 50px;">Task List</h2>
+    <div class="button_container">
+        <button class="btn btn-secondary" style="margin-left: 55px;" (click)="routeTo(0)">Add</button>
+    </div>
+    <table>
+        <colgroup>
+            <col style="width: 2%;">
+            <col style="width: 14.5%;">
+            <col style="width: 5%;">
+            <col style="width: 2%;">
+            <col style="width: 2%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>SL. No</th>
+                <th>Title</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of taskList; let i = index">
+                <td>{{i+1}}</td>
+                <td (click)="routeTo(item.id)" style="text-align: left;">{{item.Title}}</td>
+                <td (click)="routeTo(item.id)">{{item.DueDate | date :'MM/dd/yyyy'}}</td>
+                <td><input (change)="OnChange($event,item.id)" [checked]="item.Status" type="checkbox"></td>
+                <td><i (click)="openModal(backModel,item.id)" class="bi bi-trash"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #backModel>
+    <div class="modal-body">
+        <p>Are you sure you want to Delete the Task?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="modalRef.hide()">No</button>
+        <button type="button" class="btn btn-secondary" (click)="DeleteTask(toDeletedId)">Yes</button>
+    </div>
+</ng-template>

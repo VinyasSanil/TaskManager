@@ -1,0 +1,75 @@
+<h2>{{heading}}</h2>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form #myForm="ngForm" (ngSubmit)="Submit()">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                          <div class="col-sm-8">
+                            <div class="mb-3 row">
+                              <label for="staticEmail" class="col-sm-4 col-form-label">Title</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" name="title" [(ngModel)]="title" required>
+                                <div class="alert alert-danger" *ngIf="myForm?.controls?.title?.dirty && myForm?.controls?.title?.invalid">
+                                    Title is required
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                              <label  class="col-sm-4 col-form-label">Description</label>
+                              <div class="col-sm-8">
+                                <input type="text" class="form-control" name="description" [(ngModel)]="description" required>
+                                <div class="alert alert-danger" *ngIf="myForm?.controls?.description?.dirty && myForm?.controls?.description?.invalid">
+                                    Description is required
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label  class="col-sm-4 col-form-label">Due Date</label>
+                                <div class="col-sm-8">
+                                    <div class="content">
+                                        <input matInput [matDatepicker]="picker" placeholder="Choose a date" readonly [formControl]="dueDate" (dateChange)="addEvent($event)">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </div>
+                                  
+                                  <div class="alert alert-danger" *ngIf="myForm?.controls?.dueDate?.dirty && myForm?.controls?.dueDate?.invalid">
+                                    Due Date is required
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mb-3 row" *ngIf="heading=='Edit Task'">
+                                <label  class="col-sm-4 col-form-label">Status</label>
+                                <div class="col-sm-1">
+                                  <input type="checkbox" class=" form-check-input" name="status" [checked]="status" [(ngModel)]="status">
+                                  <div class="alert alert-danger" *ngIf="myForm?.controls?.status?.dirty && myForm?.controls?.status?.invalid">
+                                    Status is required
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="button_container">
+                        <button type="button" class="btn btn-secondary" style="margin-left: 120px;" (click)="openModal(backModel)">Back</button>
+                        <button type="submit" class="btn btn-secondary" style="margin-left: 10px;" [disabled]="myForm?.invalid">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #backModel>
+    <div class="modal-body">
+        <p>Are you sure you want to Cancel? Any modifications will not be Saved.</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="modalRef.hide()">No</button>
+        <button type="button" class="btn btn-secondary" (click)="routeBack()">Yes</button>
+    </div>
+</ng-template>
+
+
+  

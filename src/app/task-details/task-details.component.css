@@ -1,0 +1,81 @@
+
+/* .details,h2 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+  }
+  .row {
+    margin-top: 10px; 
+    display: grid;
+  }
+  
+  .row label {
+    font-weight: bold;
+    margin-top: 10px; 
+    margin-right: 60px;
+    font-size: 16px;
+  }
+  .row input[type="text"],
+  .row input[type="text"] {
+    width: 100%; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+  } */
+  /* button_save {
+    margin-left: 185px; 
+    margin-top: 20px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #a19e9e; 
+} */
+/* .button_container{
+    text-align: center;
+    margin-top: 10px;
+}
+button{
+    font-weight: bold;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.alert{
+  margin-left: 10px;
+  padding: 5px;
+}
+.row input[type="checkbox"] {
+  height: 20px; 
+  margin-top: 10px;
+  margin-left: -80px;
+} */
+h2{
+    display: flex;
+    justify-content: center; 
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.container{
+  margin-top: 20px;
+}
+.alert{
+  font-size: 12px;
+  padding: 5px;
+}
+.form-check-input{
+  border-color: rgb(63, 62, 62);
+  margin-left: 1px;
+  margin-top: 11px;
+}
+.button_container{
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+}
