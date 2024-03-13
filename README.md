@@ -32,11 +32,21 @@ git clone https://github.com/VinyasSanil/TaskManager.git
 
 cd task-manager
 
-3. Install dependencies:
+
+3. Install Node.js and npm (if not already installed):
+
+Download and install Node.js version 14 or 16 from https://nodejs.org/
+
+
+4. Install Angular CLI version 12 globally (if not already installed):
+
+npm install -g @angular/cli@12
+
+5. Install dependencies:
 
 npm install
 
-4. Start the JSON server for storage:
+6. Start the JSON server for storage:
 
 json-server --watch db.json --port 3000 (If json-server is installed globally)
 
@@ -44,11 +54,11 @@ or
 
 npx json-server --watch db.json --port 3000 (If json-server is installed locally)
 
-4. In a separate terminal, start the Angular application:
+7. In a separate terminal, start the Angular application:
 
 ng serve
 
-5. Open your browser and navigate to `http://localhost:4200` to view the application.
+8. Open your browser and navigate to `http://localhost:4200` to view the application.
 
 or
 
